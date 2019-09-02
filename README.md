@@ -28,7 +28,7 @@ Html布局
 CSS布局
 
 ```css
-	    * {
+	* {
             margin: 0;
             padding: 0;
             text-decoration: none;
@@ -122,7 +122,7 @@ JS实现：
 1.实现左右箭头切换图片
 
 ```javascript
-		var list = document.getElementById('list');
+	var list = document.getElementById('list');
         var prev = document.getElementById('prev');
         var next = document.getElementById('next');
 
@@ -157,7 +157,7 @@ JS实现：
 2.实现自动循环播放，利用setInterval
 
 ```javascript
- 		// 循环滚动
+ 	// 循环滚动
         var timer;
         function play() {
             timer = setInterval(function () {
@@ -171,7 +171,7 @@ JS实现：
 3.实现鼠标移入，图片停住
 
 ```javascript
-		// 鼠标移入，图片停住
+	// 鼠标移入，图片停住
         var container = document.getElementById('container');
         function stop() {
             clearInterval(timer);
@@ -183,9 +183,9 @@ JS实现：
 4.实现圆点自动选择当前图片
 
 ```javascript
-		// 圆点的移动
+	// 圆点的移动
         var buttons = document.getElementsByTagName('span');
-		var index = 1;//下标
+	var index = 1;//下标
         function buttonShow() {
             for (var i = 0; i < buttons.length; i++) {
                 // 先清除之前的样式
@@ -197,8 +197,8 @@ JS实现：
             buttons[index-1].className = 'on';
         }
 
-		//点击上或者下一张图片改为
-		prev.onclick = function () {
+	//点击上或者下一张图片改为
+	prev.onclick = function () {
             index = index - 1;
             if (index < 1) {
                 index = 4;
@@ -219,8 +219,8 @@ JS实现：
 5.实现点击圆点切换到相应图片，通过偏移量找到对应图片
 
 ```javascript
-		// 通过鼠标任意点击其中一个小圆点，切换到相应的图片
-		//通过块级作用域获取到正确的下标，如果用var则每次都打印i为4
+	// 通过鼠标任意点击其中一个小圆点，切换到相应的图片
+	//通过块级作用域获取到正确的下标，如果用var则每次都打印i为4
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].onclick = function () {
                 //console.log(i);
@@ -234,7 +234,7 @@ JS实现：
 ```
 
 ```javascript
-		for (var i = 0; i < buttons.length; i++) {
+	for (var i = 0; i < buttons.length; i++) {
             //不使用块级作用域，利用闭包的自执行函数实现
             (function (i) {
                 buttons[i].onclick = function () {
